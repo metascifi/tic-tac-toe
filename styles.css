@@ -1,0 +1,95 @@
+@font-face {
+    font-family: "Inter";
+    src: url("fonts/Inter-VariableFont_opsz\,wght.woff2") format("woff2 supports variations"),
+         url("fonts/Inter-VariableFont_opsz\,wght.woff2") format("woff2-variations");
+    font-weight: 100 900;
+  }
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --interface-general-color: black;
+    --body-background-color: #47C7C5;
+    --player-score-container-color: #D9D9D9;
+    --player-sign-background-color: #E3A1A1;
+    --gameboard-net-color: #45A4C6;
+    --playNewGame-text-color: #4BA6A5;
+}
+
+html {
+    height: 100%;
+    color: var(--interface-general-color);
+    font-family: "Inter", 'Times New Roman', Times, serif, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--body-background-color);
+    justify-content: space-between;
+    padding-top: calc(calc(32/16) * 1rem);;
+}
+
+.score-container {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    font-size: calc(calc(32/16) * 1rem);
+    font-weight: 700;
+    position: relative;
+    margin: 0 auto;
+}
+
+.player-score-container {
+    display: flex;
+    width: calc(calc(200/16) * 1rem);
+    background-color: var(--player-score-container-color);
+    padding: calc(calc(16/16) * 1rem);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.player-score-container > p:first-child {
+    background-color: var(--player-sign-background-color);
+    padding: calc(calc(2/16) * 1rem) calc(calc(20/16) * 1rem);
+    border-radius: calc(calc(8/16) * 1rem);
+}
+
+.gameboard-section {
+    margin: 0 auto;
+    padding: calc(calc(50/16) * 1rem) 0rem;
+    font-size:  calc(calc(calc(60/16) * 1rem));
+    font-weight: 800;
+}
+
+.gameboard-container {
+    display: grid;
+    grid-template-columns: repeat(3, calc(calc(calc(150/16) * 1rem)));
+    grid-template-rows: repeat(3, calc(calc(calc(150/16) * 1rem)));
+    gap: calc(calc(30/16) * 1rem);
+    background-color: var(--gameboard-net-color);
+}
+
+.gameboard-container > .container-item {
+    color:var(--player-sign-background-color);
+    background-color: var(--body-background-color);
+    font-size: calc(calc(calc(128/16) * 1rem));
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.playNewGame-container {
+    padding: calc(calc(calc(4/16) * 1rem)) 0rem;
+    font-size:  calc(calc(calc(40/16) * 1rem));
+    text-align: center;
+    font-weight: 800;
+    background-color: var(--player-score-container-color);
+    color: var(--playNewGame-text-color);
+    justify-self: flex-end;
+    cursor: pointer;
+}
